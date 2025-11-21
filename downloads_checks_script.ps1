@@ -1,6 +1,8 @@
-﻿# Set the Downloads Directory
+# NOTE: I have placed some Foreground colors for user readability. This is optional.
+ 
+ # Set the Downloads Directory
 
-$DocumentsDir = "$env:USERPROFILE\OneDrive\Documents"
+$DocumentsDir = "$env:USERPROFILE\Documents" #You can add \OneDrive before the \Downloads path to display the contents of the Downloads directory within OneDrive included.
 
 Write-Host "Contents of the Documents folder:" -ForegroundColor Gray
 Write-Host "---------------------------------"
@@ -45,4 +47,5 @@ if ($copyFiles.Count -gt 0) {
 
 } else {
     Write-Host "`nNo duplicate copies found." -ForegroundColor Green
+
 }
