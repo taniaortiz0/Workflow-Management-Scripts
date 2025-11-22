@@ -1,5 +1,5 @@
 ﻿# Set the Desktop Directory
-$DesktopDir = "$env:USERPROFILE\OneDrive\Desktop"
+$DesktopDir = "$env:USERPROFILE\Desktop" # You can add \OneDrive before the \Downloads path to display the contents of the Downloads directory within OneDrive included.
 
 Write-Host "Contents of the Desktop folder:" -ForegroundColor Gray
 Write-Host "---------------------------------"
@@ -40,4 +40,5 @@ if ($copyFiles.Count -gt 0) {
 } else {
     Write-Host "`nNo duplicate copies found." -ForegroundColor Green
 }
+
 
