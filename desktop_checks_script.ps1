@@ -4,14 +4,14 @@ $DesktopDir = "$env:USERPROFILE\OneDrive\Desktop"
 Write-Host "Contents of the Desktop folder:" -ForegroundColor Gray
 Write-Host "---------------------------------"
 
-# Get all files in Desktop and subfolders (with error suppression for access issues)
+# Get all files in Desktop and subfolders
 $AllFiles = Get-ChildItem -Path $DesktopDir -File -Recurse 
     Select-Object FullName, Name, CreationTime, LastAccessTime
 
-# Display all files (optional; comment out if you don't want to list everything)
+# Display all files
 $AllFiles | Format-Table Name, CreationTime, LastAccessTime -AutoSize
 
-# Detect duplicate copies (e.g. "file (1).txt")
+# Detect duplicate copies
 $copyFiles = $AllFiles | Where-Object { $_.Name -match '\(\d+\)' }
 
 if ($copyFiles.Count -gt 0) {
@@ -40,3 +40,4 @@ if ($copyFiles.Count -gt 0) {
 } else {
     Write-Host "`nNo duplicate copies found." -ForegroundColor Green
 }
+
